@@ -92,23 +92,96 @@ namespace ConversoresdeUnidad
         {
             try
             {
+
+                string from, to;
+
+                from =cboDeLong.SelectedItem.ToString() ;
+                to = cboALong.SelectedItem.ToString();
+
+               
                 double Cantidad = double.Parse(txtlong.Text), METRO = 1, CM = 100, Pulg = 0.393701, Yardas = 0.0109361,
                     varas = 1.430828, ft = 0.0328084, kms = 1000, millas = 1609.344, respuesta = 0,
                 dato = 0;
 
-
+                
 
                 switch (cboDeLong.SelectedIndex)
                 {
 
                     case 0://METRO
+                        if (from == "Metro" && to == "Cm")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) * 100);
 
-                        dato = Cantidad / METRO * Cantidad;
+                        }
+                        if (from == "METRO" && to == "Pulg")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) * 39.37);
+
+                        }
+                        if (from == "METRO" && to == "Yardas")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) * 1.094);
+
+                        }
+                        if (from == "METRO" && to == "varas")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) * 1.430828);
+
+                        }
+                        
+                        if (from == "METRO" && to == "ft")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) * 3.281);
+
+                        }
+                        if (from == "METRO" && to == "kms")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 1000);
+
+                        }
+                        if (from == "METRO" && to == "millas")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 1609);
+
+                        }
                         break;
                     case 1://CM
+                        if (from == "CM" && to == "METRO")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 100);
 
+                        }
+                        if (from == "CM" && to == "Pulg")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 2.54);
 
-                        dato = Cantidad / CM * Cantidad;
+                        }
+                        if (from == "CM" && to == "Yardas")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 91.44);
+
+                        }
+                        if (from == "CM" && to == "varas")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 1.430828);
+
+                        }
+                        if (from == "CM" && to == "ft")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 30.48);
+
+                        }
+                        if (from == "CM" && to == "kms")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 100000);
+
+                        }
+                        if (from == "CM" && to == "millas")
+                        {
+                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 160934);
+
+                        }
                         break;
                     case 2://PULGADA
                         dato = Cantidad / Pulg * Cantidad;
@@ -184,7 +257,7 @@ namespace ConversoresdeUnidad
 
                 double Cantidad = double.Parse(txtpeso.Text), gramo = 100, ML = 1000, onza = 28.35, Kg = 1000,
                     libras = 453.592, quintal = 100, respuesta = 0,
-                dato = 0; /*
+                dato = 0; 
                 switch (cboDePes.SelectedIndex)
                 {
                     case 0://GRAMOS
@@ -242,7 +315,7 @@ namespace ConversoresdeUnidad
                 MessageBox.Show("Por favor ingrese solo numero: " + error.Message, "Conversor masa(peso)",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                     
-            } */
+            } 
 
 
         }
@@ -312,7 +385,7 @@ namespace ConversoresdeUnidad
 
         private void BtnAlmacenaje_Click(object sender, EventArgs e)
         {
-            /*
+           
             try
             {
                 double Alma = double.Parse(txtAlma.Text),Bit=8, Byte=1, KB = 1024, MB = 1048576, GB = 1073741824,TB= 1099511627776, PB= 1125899906842624,EB= 1152921504606846976 , datoAlma = 0, respuesta = 0;
@@ -399,8 +472,9 @@ namespace ConversoresdeUnidad
             {
                 MessageBox.Show("Por favor ingrese solo numero: " + error.Message, "Conversor temperatura",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    */
+
         }
     }
     }
 }
+
