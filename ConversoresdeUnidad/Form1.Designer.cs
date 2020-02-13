@@ -94,11 +94,11 @@
             this.cboAPes.FormattingEnabled = true;
             this.cboAPes.Items.AddRange(new object[] {
             "Gramos",
-            "ML",
-            "Onzas",
-            "KG",
+            "Miligramo",
+            "Microgramo",
+            "Kilogramo",
             "Libras",
-            "Quitales"});
+            "Onzas"});
             this.cboAPes.Location = new System.Drawing.Point(360, 132);
             this.cboAPes.Name = "cboAPes";
             this.cboAPes.Size = new System.Drawing.Size(121, 21);
@@ -110,11 +110,11 @@
             this.cboDePes.FormattingEnabled = true;
             this.cboDePes.Items.AddRange(new object[] {
             "Gramos",
-            "ML",
-            "Onzas",
-            "KG",
+            "Miligramo",
+            "Microgramo",
+            "Kilogramo",
             "Libras",
-            "Quitales"});
+            "Onzas"});
             this.cboDePes.Location = new System.Drawing.Point(215, 132);
             this.cboDePes.Name = "cboDePes";
             this.cboDePes.Size = new System.Drawing.Size(121, 21);
@@ -286,7 +286,7 @@
             "Lempira",
             "Cordoba",
             "Peso CR",
-            "Colón SV"});
+            "Colon SV"});
             this.cboAMon.Location = new System.Drawing.Point(360, 35);
             this.cboAMon.Name = "cboAMon";
             this.cboAMon.Size = new System.Drawing.Size(121, 21);
@@ -303,8 +303,7 @@
             "Lempira",
             "Cordoba",
             "Peso CR",
-            "Colón SV",
-            ""});
+            "Colon SV"});
             this.cboDeMon.Location = new System.Drawing.Point(215, 37);
             this.cboDeMon.Name = "cboDeMon";
             this.cboDeMon.Size = new System.Drawing.Size(121, 21);
@@ -360,8 +359,7 @@
             "MB",
             "GB",
             "TB",
-            "PB",
-            "EB"});
+            "PB"});
             this.cboAAlma.Location = new System.Drawing.Point(360, 211);
             this.cboAAlma.Name = "cboAAlma";
             this.cboAAlma.Size = new System.Drawing.Size(121, 21);
@@ -378,8 +376,7 @@
             "MB",
             "GB",
             "TB",
-            "PB",
-            "EB"});
+            "PB"});
             this.cboDeAlma.Location = new System.Drawing.Point(215, 209);
             this.cboDeAlma.Name = "cboDeAlma";
             this.cboDeAlma.Size = new System.Drawing.Size(121, 21);

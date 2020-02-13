@@ -21,33 +21,196 @@ namespace ConversoresdeUnidad
         {
             try
             {
-                double Cantidad = double.Parse(txtmon.Text), dolar = 1.00, euro = 1.13, Quet = 0.013, lemp = 0.041,
-                    cordoba = 0.031, CR = 605.36, SV = 0.11, respuesta = 0,
+                string from, to;
+
+                from = cboDeMon.SelectedItem.ToString();
+                to = cboAMon.SelectedItem.ToString();
+                double Cantidad = double.Parse(txtmon.Text), 
                 moneda = 0;
                 switch (cboDeMon.SelectedIndex)
                 {
 
                     case 0://DOLAR
-
-                        moneda = Cantidad * dolar;
+                        if (from == "Dolar" && to == "Euro")
+                        {
+                            moneda = Cantidad / 1.09;
+                        }
+                        if (from == "Dolar" && to == "Quetzal")
+                        {
+                            moneda = Cantidad / 0.13;
+                        }
+                        if (from == "Dolar" && to == "Lempira")
+                        {
+                            moneda = Cantidad / 0.040;
+                        }
+                        if (from == "Dolar" && to == "Cordoba")
+                        {
+                            moneda = Cantidad / 0.030;
+                        }
+                        if (from == "Dolar" && to == "Peso CR")
+                        {
+                            moneda = Cantidad / 0.0018;
+                        }
+                        if (from == "Dolar" && to == "Colon SV")
+                        {
+                            moneda = Cantidad / 0.11;
+                        }
                         break;
                     case 1://EURO
-                        moneda = Cantidad * euro;
+                        if (from == "Euro" && to == "Dolar")
+                        {
+                            moneda = Cantidad / 0.92;
+                        }
+                        if (from == "Euro" && to == "Quetzal")
+                        {
+                            moneda = Cantidad / 0.12;
+                        }
+                        if (from == "Euro" && to == "Lempira")
+                        {
+                            moneda = Cantidad / 0.037;
+                        }
+                        if (from == "Euro" && to == "Cordoba")
+                        {
+                            moneda = Cantidad / 0.027;
+                        }
+                        if (from == "Euro" && to == "Peso CR")
+                        {
+                            moneda = Cantidad / 0.0016;
+                        }
+                        if (from == "Euro" && to == "Colon SV")
+                        {
+                            moneda = Cantidad / 0.10;
+                        }
                         break;
                     case 2://QUETZAL
-                        moneda = Cantidad * Quet;
+                        if (from == "Quetzal" && to == "Dolar")
+                        {
+                            moneda = Cantidad / 5.79;
+                        }
+                        if (from == "Quetzal" && to == "Euro")
+                        {
+                            moneda = Cantidad / 8.34;
+                        }
+                        if (from == "Quetzal" && to == "Lempira")
+                        {
+                            moneda = Cantidad / 0.31;
+                        }
+                        if (from == "Quetzal" && to == "Cordoba")
+                        {
+                            moneda = Cantidad / 0.32;
+                        }
+                        if (from == "Quetzal" && to == "Peso CR")
+                        {
+                            moneda = Cantidad / 0.013;
+                        }
+                        if (from == "Quetzal" && to == "Colon SV")
+                        {
+                            moneda = Cantidad / 0.87;
+                        }
                         break;
                     case 3://LEMPIRA
-                        moneda = Cantidad * lemp;
+                        if (from == "Lempira" && to == "Dolar")
+                        {
+                            moneda = Cantidad / 24.72;
+                        }
+                        if (from == "Lempira" && to == "Euro")
+                        {
+                            moneda = Cantidad / 26.87;
+                        }
+                        if (from == "Lempira" && to == "Quetzal")
+                        {
+                            moneda = Cantidad / 3.22;
+                        }
+                        if (from == "Lempira" && to == "Cordoba")
+                        {
+                            moneda = Cantidad / 0.73;
+                        }
+                        if (from == "Lempira" && to == "Peso CR")
+                        {
+                            moneda = Cantidad / 0.043;
+                        }
+                        if (from == "Lempira" && to == "Colon SV")
+                        {
+                            moneda = Cantidad / 2.82;
+                        }
                         break;
                     case 4://CORDOBA
-                        moneda = Cantidad * cordoba;
+                        if (from == "Cordoba" && to == "Dolar")
+                        {
+                            moneda = Cantidad / 33.86;
+                        }
+                        if (from == "Cordoba" && to == "Euro")
+                        {
+                            moneda = Cantidad / 36.80;
+                        }
+                        if (from == "Cordoba" && to == "Quetzal")
+                        {
+                            moneda = Cantidad / 4.42;
+                        }
+                        if (from == "Cordoba" && to == "Lempira")
+                        {
+                            moneda = Cantidad / 1.37;
+                        }
+                        if (from == "Cordoba" && to == "Peso CR")
+                        {
+                            moneda = Cantidad / 0.059;
+                        }
+                        if (from == "Cordoba" && to == "Colon SV")
+                        {
+                            moneda = Cantidad / 3.86;
+                        }
                         break;
                     case 5://CR
-                        moneda = Cantidad * CR;
+                        if (from == "Peso CR" && to == "Dolar")
+                        {
+                            moneda = Cantidad / 571.08;
+                        }
+                        if (from == "Peso CR" && to == "Euro")
+                        {
+                            moneda = Cantidad / 620.79;
+                        }
+                        if (from == "Peso CR" && to == "Quetzal")
+                        {
+                            moneda = Cantidad / 74.48;
+                        }
+                        if (from == "Peso CR" && to == "Lempira")
+                        {
+                            moneda = Cantidad / 74.48;
+                        }
+                        if (from == "Peso CR" && to == "Cordoba")
+                        {
+                            moneda = Cantidad / 16.87;
+                        }
+                        if (from == "Peso CR" && to == "Colon SV")
+                        {
+                            moneda = Cantidad / 64.83;
+                        }
                         break;
                     case 6://SV
-                        moneda = Cantidad * SV;
+                        if (from == "Colon SV" && to == "Dolar")
+                        {
+                            moneda = Cantidad / 8.78;
+                        }
+                        if (from == "Colon SV" && to == "Euro")
+                        {
+                            moneda = Cantidad / 9.55;
+                        }
+                        if (from == "Colon SV" && to == "Quetzal")
+                        {
+                            moneda = Cantidad / 1.15;
+                        }
+                        if (from == "Colon SV" && to == "Lempira")
+                        {
+                            moneda = Cantidad / 0.35;
+                        }
+                        if (from == "Colon SV" && to == "Cordoba")
+                        {
+                            moneda = Cantidad / 0.26;
+                        }
+                        if (from == "Colon SV" && to == "Peso CR")
+                        {
+                            moneda = Cantidad / 0.015;
+                        }
                         break;
 
                 }
@@ -56,30 +219,191 @@ namespace ConversoresdeUnidad
                 switch (cboAMon.SelectedIndex)
                 {
                     case 0://DOLAR
-
-                        respuesta = moneda / dolar;
+                        if (from == "Dolar" && to == "Euro")
+                        {
+                            moneda = Cantidad / 1.09;
+                        }
+                        if (from == "Dolar" && to == "Quetzal")
+                        {
+                            moneda = Cantidad / 0.13;
+                        }
+                        if (from == "Dolar" && to == "Lempira")
+                        {
+                            moneda = Cantidad / 0.040;
+                        }
+                        if (from == "Dolar" && to == "Cordoba")
+                        {
+                            moneda = Cantidad / 0.030;
+                        }
+                        if (from == "Dolar" && to == "Peso CR")
+                        {
+                            moneda = Cantidad / 0.0018;
+                        }
+                        if (from == "Dolar" && to == "Colon SV")
+                        {
+                            moneda = Cantidad / 0.11;
+                        }
                         break;
                     case 1://EURO
-                        respuesta = moneda / euro;
+                        if (from == "Euro" && to == "Dolar")
+                        {
+                            moneda = Cantidad / 0.92;
+                        }
+                        if (from == "Euro" && to == "Quetzal")
+                        {
+                            moneda = Cantidad / 0.12;
+                        }
+                        if (from == "Euro" && to == "Lempira")
+                        {
+                            moneda = Cantidad / 0.037;
+                        }
+                        if (from == "Euro" && to == "Cordoba")
+                        {
+                            moneda = Cantidad / 0.027;
+                        }
+                        if (from == "Euro" && to == "Peso CR")
+                        {
+                            moneda = Cantidad / 0.0016;
+                        }
+                        if (from == "Euro" && to == "Colon SV")
+                        {
+                            moneda = Cantidad / 0.10;
+                        }
                         break;
                     case 2://QUETZAL
-                        respuesta = moneda / Quet;
+                        if (from == "Quetzal" && to == "Dolar")
+                        {
+                            moneda = Cantidad / 5.79;
+                        }
+                        if (from == "Quetzal" && to == "Euro")
+                        {
+                            moneda = Cantidad / 8.34;
+                        }
+                        if (from == "Quetzal" && to == "Lempira")
+                        {
+                            moneda = Cantidad / 0.31;
+                        }
+                        if (from == "Quetzal" && to == "Cordoba")
+                        {
+                            moneda = Cantidad / 0.32;
+                        }
+                        if (from == "Quetzal" && to == "Peso CR")
+                        {
+                            moneda = Cantidad / 0.013;
+                        }
+                        if (from == "Quetzal" && to == "Colon SV")
+                        {
+                            moneda = Cantidad / 0.87;
+                        }
                         break;
                     case 3://LEMPIRA
-                        respuesta = moneda / lemp;
+                        if (from == "Lempira" && to == "Dolar")
+                        {
+                            moneda = Cantidad / 24.72;
+                        }
+                        if (from == "Lempira" && to == "Euro")
+                        {
+                            moneda = Cantidad / 26.87;
+                        }
+                        if (from == "Lempira" && to == "Quetzal")
+                        {
+                            moneda = Cantidad / 3.22;
+                        }
+                        if (from == "Lempira" && to == "Cordoba")
+                        {
+                            moneda = Cantidad / 0.73;
+                        }
+                        if (from == "Lempira" && to == "Peso CR")
+                        {
+                            moneda = Cantidad / 0.043;
+                        }
+                        if (from == "Lempira" && to == "Colon SV")
+                        {
+                            moneda = Cantidad / 2.82;
+                        }
                         break;
                     case 4://CORDOBA
-                        respuesta = moneda / cordoba;
+                        if (from == "Cordoba" && to == "Dolar")
+                        {
+                            moneda = Cantidad / 33.86;
+                        }
+                        if (from == "Cordoba" && to == "Euro")
+                        {
+                            moneda = Cantidad / 36.80;
+                        }
+                        if (from == "Cordoba" && to == "Quetzal")
+                        {
+                            moneda = Cantidad / 4.42;
+                        }
+                        if (from == "Cordoba" && to == "Lempira")
+                        {
+                            moneda = Cantidad / 1.37;
+                        }
+                        if (from == "Cordoba" && to == "Peso CR")
+                        {
+                            moneda = Cantidad / 0.059;
+                        }
+                        if (from == "Cordoba" && to == "Colon SV")
+                        {
+                            moneda = Cantidad / 3.86;
+                        }
                         break;
                     case 5://CR
-                        respuesta = moneda / CR;
+                        if (from == "Peso CR" && to == "Dolar")
+                        {
+                            moneda = Cantidad / 571.08;
+                        }
+                        if (from == "Peso CR" && to == "Euro")
+                        {
+                            moneda = Cantidad / 620.79;
+                        }
+                        if (from == "Peso CR" && to == "Quetzal")
+                        {
+                            moneda = Cantidad / 74.48;
+                        }
+                        if (from == "Peso CR" && to == "Lempira")
+                        {
+                            moneda = Cantidad / 74.48;
+                        }
+                        if (from == "Peso CR" && to == "Cordoba")
+                        {
+                            moneda = Cantidad / 16.87;
+                        }
+                        if (from == "Peso CR" && to == "Colon SV")
+                        {
+                            moneda = Cantidad / 64.83;
+                        }
                         break;
                     case 6://SV
-                        respuesta = moneda / SV;
+                        if (from == "Colon SV" && to == "Dolar")
+                        {
+                            moneda = Cantidad / 8.78;
+                        }
+                        if (from == "Colon SV" && to == "Euro")
+                        {
+                            moneda = Cantidad / 9.55;
+                        }
+                        if (from == "Colon SV" && to == "Quetzal")
+                        {
+                            moneda = Cantidad / 1.15;
+                        }
+                        if (from == "Colon SV" && to == "Lempira")
+                        {
+                            moneda = Cantidad / 0.35;
+                        }
+                        if (from == "Colon SV" && to == "Cordoba")
+                        {
+                            moneda = Cantidad / 0.26;
+                        }
+                        if (from == "Colon SV" && to == "Peso CR")
+                        {
+                            moneda = Cantidad / 0.015;
+                        }
                         break;
 
+
                 }
-                lblRespMo.Text = "Total: " + respuesta;
+                lblRespMo.Text = "Total: " + moneda;
             }
             catch (Exception error)
             {
@@ -725,31 +1049,179 @@ namespace ConversoresdeUnidad
         private void btnPeso_Click(object sender, EventArgs e)
         {
             try
-            {
 
-                double Cantidad = double.Parse(txtpeso.Text), gramo = 100, ML = 1000, onza = 28.35, Kg = 1000,
-                    libras = 453.592, quintal = 100, respuesta = 0,
+            {
+                string from, to;
+
+                from = cboDePes.SelectedItem.ToString();
+                to = cboAPes.SelectedItem.ToString();
+
+                double Cantidad = double.Parse(txtpeso.Text), 
                 dato = 0; 
                 switch (cboDePes.SelectedIndex)
                 {
                     case 0://GRAMOS
 
-                        dato = Cantidad * gramo / Cantidad;
+                        if (from == "Gramos" && to == "Miligramo")
+                        {
+                            dato = Cantidad * 1000;
+
+                        }
+                        if (from == "Gramos" && to == "Microgramo")
+                        {
+                            dato = Cantidad * 1e+6;
+
+                        }
+                        if (from == "Gramos" && to == "Kilogramos")
+                        {
+                            dato = Cantidad / 1000;
+
+                        }
+                        if (from == "Gramos" && to == "Libras")
+                        {
+                            dato = Cantidad / 454;
+
+                        }
+                        if (from == "Gramos" && to == "Onzas")
+                        {
+                            dato = Cantidad / 28.35;
+
+                        }
                         break;
-                    case 1://ML
-                        dato = Cantidad * ML / Cantidad;
+                    case 1://Miligramos
+                        if (from == "Miligramo" && to == "Gramo")
+                        {
+                            dato = Cantidad / 1000;
+
+                        }
+                        if (from == "Miligramo" && to == "Microgramo")
+                        {
+                            dato = Cantidad * 1000;
+
+                        }
+                        if (from == "Miligramo" && to == "Kilogramos")
+                        {
+                            dato = Cantidad / 1e+6;
+
+                        }
+                        if (from == "Miligramo" && to == "Libras")
+                        {
+                            dato = Cantidad / 453592;
+
+                        }
+                        if (from == "Miligramo" && to == "Onzas")
+                        {
+                            dato = Cantidad / 28350;
+
+                        }
                         break;
-                    case 2://ONZA
-                        dato = Cantidad * onza / Cantidad;
+                    case 2://Microgramos
+                        if (from == "Microgramos" && to == "Gramos")
+                        {
+                            dato = Cantidad / 1e+6;
+
+                        }
+                        if (from == "Microgramos" && to == "Miligramo")
+                        {
+                            dato = Cantidad / 1000;
+
+                        }
+                        if (from == "Microgramos" && to == "Kilogramos")
+                        {
+                            dato = Cantidad / 1e+9;
+
+                        }
+                        if (from == "Microgramos" && to == "Libras")
+                        {
+                            dato = Cantidad / 4.536e+8;
+
+                        }
+                        if (from == "Microgramos" && to == "Onzas")
+                        {
+                            dato = Cantidad / 2.835e+7;
+
+                        }
                         break;
                     case 3://KG
-                        dato = Cantidad * Kg / Cantidad;
+                        if (from == "Kilogramos" && to == "Gramos")
+                        {
+                            dato = Cantidad * 1000;
+
+                        }
+                        if (from == "Kilogramos" && to == "Miligramos")
+                        {
+                            dato = Cantidad * 1e+6;
+
+                        }
+                        if (from == "Kilogramos" && to == "Microgramos")
+                        {
+                            dato = Cantidad * 1e+9 ;
+
+                        }
+                        if (from == "Kilogramos" && to == "Libras")
+                        {
+                            dato = Cantidad * 2.205;
+
+                        }
+                        if (from == "Kilogramos" && to == "Onzas")
+                        {
+                            dato = Cantidad * 35.274;
+
+                        }
                         break;
                     case 4://LIBRA
-                        dato = Cantidad * libras / Cantidad;
+                        if (from == "Libras" && to == "Gramos")
+                        {
+                            dato = Cantidad * 454;
+
+                        }
+                        if (from == "Libras" && to == "Miligramos")
+                        {
+                            dato = Cantidad * 453592;
+
+                        }
+                        if (from == "Libras" && to == "Microgramos")
+                        {
+                            dato = Cantidad * 4.536e+8;
+
+                        }
+                        if (from == "Libras" && to == "Kilogramos")
+                        {
+                            dato = Cantidad / 2.205;
+
+                        }
+                        if (from == "Libras" && to == "Onzas")
+                        {
+                            dato = Cantidad * 16;
+
+                        }
                         break;
-                    case 5://QUINTAL
-                        dato = Cantidad * quintal / Cantidad;
+                    case 5://Onza
+                        if (from == "Onzas" && to == "Gramos")
+                        {
+                            dato = Cantidad * 28.35;
+
+                        }
+                        if (from == "Onzas" && to == "Miligramos")
+                        {
+                            dato = Cantidad * 28350;
+
+                        }
+                        if (from == "Onzas" && to == "Microgramos")
+                        {
+                            dato = Cantidad * 2.835e+7;
+
+                        }
+                        if (from == "Onzas" && to == "Kilogramos")
+                        {
+                            dato = Cantidad / 35.274;
+
+                        }
+                        if (from == "Onzas" && to == "Libras")
+                        {
+                            dato = Cantidad / 16;
+
+                        }
                         break;
 
                 }
@@ -758,27 +1230,170 @@ namespace ConversoresdeUnidad
                 {
                     case 0://GRAMOS
 
-                        respuesta = dato / gramo * dato;
+                        if (from == "Gramos" && to == "Miligramo")
+                        {
+                            dato = Cantidad * 1000;
+
+                        }
+                        if (from == "Gramos" && to == "Microgramo")
+                        {
+                            dato = Cantidad * 1e+6;
+
+                        }
+                        if (from == "Gramos" && to == "Kilogramos")
+                        {
+                            dato = Cantidad / 1000;
+
+                        }
+                        if (from == "Gramos" && to == "Libras")
+                        {
+                            dato = Cantidad / 454;
+
+                        }
+                        if (from == "Gramos" && to == "Onzas")
+                        {
+                            dato = Cantidad / 28.35;
+
+                        }
                         break;
-                    case 1://ML
-                        respuesta = dato / ML * dato;
+                    case 1://Miligramos
+                        if (from == "Miligramo" && to == "Gramo")
+                        {
+                            dato = Cantidad / 1000;
+
+                        }
+                        if (from == "Miligramo" && to == "Microgramo")
+                        {
+                            dato = Cantidad * 1000;
+
+                        }
+                        if (from == "Miligramo" && to == "Kilogramos")
+                        {
+                            dato = Cantidad / 1e+6;
+
+                        }
+                        if (from == "Miligramo" && to == "Libras")
+                        {
+                            dato = Cantidad / 453592;
+
+                        }
+                        if (from == "Miligramo" && to == "Onzas")
+                        {
+                            dato = Cantidad / 28350;
+
+                        }
                         break;
-                    case 2://ONZA
-                        respuesta = dato / onza * dato;
+                    case 2://Microgramos
+                        if (from == "Microgramos" && to == "Gramos")
+                        {
+                            dato = Cantidad / 1e+6;
+
+                        }
+                        if (from == "Microgramos" && to == "Miligramo")
+                        {
+                            dato = Cantidad / 1000;
+
+                        }
+                        if (from == "Microgramos" && to == "Kilogramos")
+                        {
+                            dato = Cantidad / 1e+9;
+
+                        }
+                        if (from == "Microgramos" && to == "Libras")
+                        {
+                            dato = Cantidad / 4.536e+8;
+
+                        }
+                        if (from == "Microgramos" && to == "Onzas")
+                        {
+                            dato = Cantidad / 2.835e+7;
+
+                        }
                         break;
                     case 3://KG
-                        respuesta = dato / Kg * dato;
+                        if (from == "Kilogramos" && to == "Gramos")
+                        {
+                            dato = Cantidad * 1000;
+
+                        }
+                        if (from == "Kilogramos" && to == "Miligramos")
+                        {
+                            dato = Cantidad * 1e+6;
+
+                        }
+                        if (from == "Kilogramos" && to == "Microgramos")
+                        {
+                            dato = Cantidad * 1e+9;
+
+                        }
+                        if (from == "Kilogramos" && to == "Libras")
+                        {
+                            dato = Cantidad * 2.205;
+
+                        }
+                        if (from == "Kilogramos" && to == "Onzas")
+                        {
+                            dato = Cantidad * 35.274;
+
+                        }
                         break;
                     case 4://LIBRA
-                        respuesta = dato / libras * dato;
-                        break;
-                    case 5://QUINTAL
-                        respuesta = dato / quintal * dato;
-                        break;
+                        if (from == "Libras" && to == "Gramos")
+                        {
+                            dato = Cantidad * 454;
 
+                        }
+                        if (from == "Libras" && to == "Miligramos")
+                        {
+                            dato = Cantidad * 453592;
+
+                        }
+                        if (from == "Libras" && to == "Microgramos")
+                        {
+                            dato = Cantidad * 4.536e+8;
+
+                        }
+                        if (from == "Libras" && to == "Kilogramos")
+                        {
+                            dato = Cantidad / 2.205;
+
+                        }
+                        if (from == "Libras" && to == "Onzas")
+                        {
+                            dato = Cantidad * 16;
+
+                        }
+                        break;
+                    case 5://Onza
+                        if (from == "Onzas" && to == "Gramos")
+                        {
+                            dato = Cantidad * 28.35;
+
+                        }
+                        if (from == "Onzas" && to == "Miligramos")
+                        {
+                            dato = Cantidad * 28350;
+
+                        }
+                        if (from == "Onzas" && to == "Microgramos")
+                        {
+                            dato = Cantidad * 2.835e+7;
+
+                        }
+                        if (from == "Onzas" && to == "Kilogramos")
+                        {
+                            dato = Cantidad / 35.274;
+
+                        }
+                        if (from == "Onzas" && to == "Libras")
+                        {
+                            dato = Cantidad / 16;
+
+                        }
+                        break;
                 }
 
-                lblRespPeso.Text = "Total: " + respuesta;
+                lblRespPeso.Text = "Total: " + dato;
 
 
             }
@@ -798,18 +1413,52 @@ namespace ConversoresdeUnidad
             try
             {
                 double temp = double.Parse(txtTemp.Text), C = 32, F = 9 / 5, k = 273.15, datotemp = 0, respuesta = 0;
+                string from, to;
 
+                from = cboDeTemp.SelectedItem.ToString();
+                to = cboATemp.SelectedItem.ToString();
                 switch (cboDeTemp.SelectedIndex)
                 {
 
                     case 0://C
+                        if (from == "Celcius" && to == "Farenheit")
+                        {
+                            datotemp = (temp * 9/5)+32;
 
+                        }
+                        if (from == "Celcius" && to == "Kelvin")
+                        {
+                            datotemp = temp +273.15;
+
+                        }
 
                         break;
                     case 1://F
+                        if (from == "Farenheit" && to == "Celcius")
+                        {
+                            datotemp = (temp -32)*5/9;
+
+                        }
+                        if (from == "Farenheit" && to == "Kelvin")
+                        {
+                            datotemp = (temp - 32) * 5 / 9 + 273.15;
+
+                        }
+
 
                         break;
                     case 2://K
+                        if (from == "Kelvin" && to == "Celcius")
+                        {
+                            datotemp = temp -  273.15;
+
+                        }
+                        if (from == "Kelvin" && to == "Farenheit")
+                        {
+                            datotemp = (temp - 273.15)*9/5+32;
+
+                        }
+
 
                         break;
 
@@ -819,25 +1468,44 @@ namespace ConversoresdeUnidad
                 switch (cboATemp.SelectedIndex)
                 {
                     case 0://C
-                        if (cboDeTemp.SelectedIndex == 1)
-                            respuesta = (datotemp - C) * F;
-                        if (cboDeTemp.SelectedIndex == 2)
-                            respuesta = datotemp - k;
+                        if (from == "Celcius" && to == "Farenheit")
+                        {
+                            datotemp = (temp * 9 / 5) + 32;
+
+                        }
+                        if (from == "Celcius" && to == "Kelvin")
+                        {
+                            datotemp = temp + 273.15;
+
+                        }
 
                         break;
                     case 1://F
-                        if (cboDeTemp.SelectedIndex == 0)
-                            respuesta = (datotemp * F) + C;
-                        if (cboDeTemp.SelectedIndex == 2)
-                            respuesta = (datotemp - k) * F + C;
+                        if (from == "Farenheit" && to == "Celcius")
+                        {
+                            datotemp = (temp - 32) * 5 / 9;
+
+                        }
+                        if (from == "Farenheit" && to == "Kelvin")
+                        {
+                            datotemp = (temp - 32) * 5 / 9 + 273.15;
+
+                        }
+
 
                         break;
                     case 2://K
+                        if (from == "Kelvin" && to == "Celcius")
+                        {
+                            datotemp = temp - 273.15;
 
-                        if (cboDeTemp.SelectedIndex == 0)
-                            respuesta = (datotemp + k);
-                        if (cboDeTemp.SelectedIndex == 1)
-                            respuesta = (datotemp - C) * F + k;
+                        }
+                        if (from == "Kelvin" && to == "Farenheit")
+                        {
+                            datotemp = (temp - 273.15) * 9 / 5 + 32;
+
+                        }
+
 
                         break;
                 }
@@ -861,35 +1529,240 @@ namespace ConversoresdeUnidad
             try
             {
                 double Alma = double.Parse(txtAlma.Text),Bit=8, Byte=1, KB = 1024, MB = 1048576, GB = 1073741824,TB= 1099511627776, PB= 1125899906842624,EB= 1152921504606846976 , datoAlma = 0, respuesta = 0;
+                string from, to;
 
+                from = cboDeAlma.SelectedItem.ToString();
+                to = cboAAlma.SelectedItem.ToString();
                 switch (cboDeAlma.SelectedIndex)
                 {
 
                     case 0://BIT
-                        datoAlma = Alma * Bit / Alma;
+                        if (from == "Bit" && to == "Byte")
+                        {
+                            datoAlma = Alma / 8;
 
+                        }
+                        if (from == "Bit" && to == "KB")
+                        {
+                            datoAlma = Alma / 8000;
+
+                        }
+                        if (from == "Bit" && to == "MB")
+                        {
+                            datoAlma = Alma / 8e+6;
+
+                        }
+                        if (from == "Bit" && to == "GB")
+                        {
+                            datoAlma = Alma / 8e+9;
+
+                        }
+                        if (from == "Bit" && to == "TB")
+                        {
+                            datoAlma = Alma / 8e+12;
+
+                        }
+                        if (from == "Bit" && to == "PB")
+                        {
+                            datoAlma = Alma / 8e+15;
+
+                        }
+                     
+
+                       
                         break;
                     case 1://BYTE
-                        datoAlma = Alma; //* Byte / Alma;
+                        if (from == "Byte" && to == "Bit")
+                        {
+                            datoAlma = Alma * 8;
+
+                        }
+                        if (from == "Byte" && to == "KB")
+                        {
+                            datoAlma = Alma / 1000;
+
+                        }
+                        if (from == "Byte" && to == "MB")
+                        {
+                            datoAlma = Alma / 1e+6;
+
+                        }
+                        if (from == "Byte" && to == "GB")
+                        {
+                            datoAlma = Alma / 1e+9;
+
+                        }
+                        if (from == "Byte" && to == "TB")
+                        {
+                            datoAlma = Alma / 1e+12;
+
+                        }
+                        if (from == "Byte" && to == "PB")
+                        {
+                            datoAlma = Alma / 1e+15;
+
+                        }
                         break;
                     case 2://KB
-                        datoAlma = Alma * KB / Alma;
+                        if (from == "KB" && to == "Bit")
+                        {
+                            datoAlma = Alma * 8000;
+
+                        }
+                        if (from == "KB" && to == "Byte")
+                        {
+                            datoAlma = Alma * 1000;
+
+                        }
+                        if (from == "KB" && to == "MB")
+                        {
+                            datoAlma = Alma / 1000;
+
+                        }
+                        if (from == "KB" && to == "GB")
+                        {
+                            datoAlma = Alma / 1e+6;
+
+                        }
+                        if (from == "KB" && to == "TB")
+                        {
+                            datoAlma = Alma / 1e+9;
+
+                        }
+                        if (from == "KB" && to == "PB")
+                        {
+                            datoAlma = Alma / 1e+12;
+
+                        }
                         break;
                     case 3://MB
-                        datoAlma = Alma * MB / Alma;
+                        if (from == "MB" && to == "Bit")
+                        {
+                            datoAlma = Alma * 1e+6;
+
+                        }
+                        if (from == "MB" && to == "Byte")
+                        {
+                            datoAlma = Alma * 125000;
+
+                        }
+                        if (from == "MB" && to == "KB")
+                        {
+                            datoAlma = Alma * 125;
+
+                        }
+                        if (from == "MB" && to == "GB")
+                        {
+                            datoAlma = Alma / 8000;
+
+                        }
+                        if (from == "MB" && to == "TB")
+                        {
+                            datoAlma = Alma / 8e+6;
+
+                        }
+                        if (from == "MB" && to == "PB")
+                        {
+                            datoAlma = Alma / 8e+9;
+
+                        }
 
                         break;
                     case 4://GB
-                        datoAlma = Alma * GB / Alma;
+                        if (from == "GB" && to == "Bit")
+                        {
+                            datoAlma = Alma * 8e+9;
+
+                        }
+                        if (from == "GB" && to == "Byte")
+                        {
+                            datoAlma = Alma * 1e+9;
+
+                        }
+                        if (from == "GB" && to == "KB")
+                        {
+                            datoAlma = Alma * 1e+6;
+
+                        }
+                        if (from == "GB" && to == "MB")
+                        {
+                            datoAlma = Alma / 8000;
+
+                        }
+                        if (from == "GB" && to == "TB")
+                        {
+                            datoAlma = Alma / 1000;
+
+                        }
+                        if (from == "GB" && to == "PB")
+                        {
+                            datoAlma = Alma / 1e+6;
+
+                        }
                         break;
                     case 5://TB
-                        datoAlma = Alma * TB / Alma;
+                        if (from == "TB" && to == "Bit")
+                        {
+                            datoAlma = Alma * 8e+12;
+
+                        }
+                        if (from == "TB" && to == "Byte")
+                        {
+                            datoAlma = Alma * 1e+12;
+
+                        }
+                        if (from == "TB" && to == "KB")
+                        {
+                            datoAlma = Alma * 1e+9;
+
+                        }
+                        if (from == "TB" && to == "MB")
+                        {
+                            datoAlma = Alma * 1e+6;
+
+                        }
+                        if (from == "TB" && to == "GB")
+                        {
+                            datoAlma = Alma * 1000;
+
+                        }
+                        if (from == "TB" && to == "PB")
+                        {
+                            datoAlma = Alma / 1000;
+
+                        }
                         break;
                     case 6://PB
-                        datoAlma = Alma * PB / Alma;
-                        break;
-                    case 7://EB
-                        datoAlma = Alma * EB / Alma;
+                        if (from == "PB" && to == "Bit")
+                        {
+                            datoAlma = Alma * 8e+15;
+
+                        }
+                        if (from == "PB" && to == "Byte")
+                        {
+                            datoAlma = Alma * 1e+15;
+
+                        }
+                        if (from == "PB" && to == "KB")
+                        {
+                            datoAlma = Alma * 1e+12;
+
+                        }
+                        if (from == "PB" && to == "MB")
+                        {
+                            datoAlma = Alma * 1e+9;
+
+                        }
+                        if (from == "PB" && to == "GB")
+                        {
+                            datoAlma = Alma * 1e+6;
+
+                        }
+                        if (from == "PB" && to == "TB")
+                        {
+                            datoAlma = Alma * 1000;
+
+                        }
                         break;
                    
 
@@ -900,41 +1773,238 @@ namespace ConversoresdeUnidad
                 switch (cboAAlma.SelectedIndex)
                 {
                     case 0://BIT
-                        datoAlma = Alma / Bit * Alma;
+                        if (from == "Bit" && to == "Byte")
+                        {
+                            datoAlma = Alma / 8;
+
+                        }
+                        if (from == "Bit" && to == "KB")
+                        {
+                            datoAlma = Alma / 8000;
+
+                        }
+                        if (from == "Bit" && to == "MB")
+                        {
+                            datoAlma = Alma / 8e+6;
+
+                        }
+                        if (from == "Bit" && to == "GB")
+                        {
+                            datoAlma = Alma / 8e+9;
+
+                        }
+                        if (from == "Bit" && to == "TB")
+                        {
+                            datoAlma = Alma / 8e+12;
+
+                        }
+                        if (from == "Bit" && to == "PB")
+                        {
+                            datoAlma = Alma / 8e+15;
+
+                        }
+
+
 
                         break;
                     case 1://BYTE
-                        datoAlma = Alma / Byte * Alma;
+                        if (from == "Byte" && to == "Bit")
+                        {
+                            datoAlma = Alma * 8;
 
+                        }
+                        if (from == "Byte" && to == "KB")
+                        {
+                            datoAlma = Alma / 1000;
+
+                        }
+                        if (from == "Byte" && to == "MB")
+                        {
+                            datoAlma = Alma / 1e+6;
+
+                        }
+                        if (from == "Byte" && to == "GB")
+                        {
+                            datoAlma = Alma / 1e+9;
+
+                        }
+                        if (from == "Byte" && to == "TB")
+                        {
+                            datoAlma = Alma / 1e+12;
+
+                        }
+                        if (from == "Byte" && to == "PB")
+                        {
+                            datoAlma = Alma / 1e+15;
+
+                        }
                         break;
                     case 2://KB
+                        if (from == "KB" && to == "Bit")
+                        {
+                            datoAlma = Alma * 8000;
 
-                        datoAlma = Alma / KB * Alma;
+                        }
+                        if (from == "KB" && to == "Byte")
+                        {
+                            datoAlma = Alma * 1000;
 
+                        }
+                        if (from == "KB" && to == "MB")
+                        {
+                            datoAlma = Alma / 1000;
+
+                        }
+                        if (from == "KB" && to == "GB")
+                        {
+                            datoAlma = Alma / 1e+6;
+
+                        }
+                        if (from == "KB" && to == "TB")
+                        {
+                            datoAlma = Alma / 1e+9;
+
+                        }
+                        if (from == "KB" && to == "PB")
+                        {
+                            datoAlma = Alma / 1e+12;
+
+                        }
                         break;
                     case 3://MB
-                        datoAlma = Alma / MB * Alma;
+                        if (from == "MB" && to == "Bit")
+                        {
+                            datoAlma = Alma * 1e+6;
+
+                        }
+                        if (from == "MB" && to == "Byte")
+                        {
+                            datoAlma = Alma * 125000;
+
+                        }
+                        if (from == "MB" && to == "KB")
+                        {
+                            datoAlma = Alma * 125;
+
+                        }
+                        if (from == "MB" && to == "GB")
+                        {
+                            datoAlma = Alma / 8000;
+
+                        }
+                        if (from == "MB" && to == "TB")
+                        {
+                            datoAlma = Alma / 8e+6;
+
+                        }
+                        if (from == "MB" && to == "PB")
+                        {
+                            datoAlma = Alma / 8e+9;
+
+                        }
 
                         break;
                     case 4://GB
-                        datoAlma = Alma / GB * Alma;
+                        if (from == "GB" && to == "Bit")
+                        {
+                            datoAlma = Alma * 8e+9;
 
+                        }
+                        if (from == "GB" && to == "Byte")
+                        {
+                            datoAlma = Alma * 1e+9;
+
+                        }
+                        if (from == "GB" && to == "KB")
+                        {
+                            datoAlma = Alma * 1e+6;
+
+                        }
+                        if (from == "GB" && to == "MB")
+                        {
+                            datoAlma = Alma / 8000;
+
+                        }
+                        if (from == "GB" && to == "TB")
+                        {
+                            datoAlma = Alma / 1000;
+
+                        }
+                        if (from == "GB" && to == "PB")
+                        {
+                            datoAlma = Alma / 1e+6;
+
+                        }
                         break;
                     case 5://TB
-                        datoAlma = Alma / TB * Alma;
+                        if (from == "TB" && to == "Bit")
+                        {
+                            datoAlma = Alma * 8e+12;
 
+                        }
+                        if (from == "TB" && to == "Byte")
+                        {
+                            datoAlma = Alma * 1e+12;
 
+                        }
+                        if (from == "TB" && to == "KB")
+                        {
+                            datoAlma = Alma * 1e+9;
+
+                        }
+                        if (from == "TB" && to == "MB")
+                        {
+                            datoAlma = Alma * 1e+6;
+
+                        }
+                        if (from == "TB" && to == "GB")
+                        {
+                            datoAlma = Alma * 1000;
+
+                        }
+                        if (from == "TB" && to == "PB")
+                        {
+                            datoAlma = Alma / 1000;
+
+                        }
                         break;
                     case 6://PB
-                        datoAlma = Alma / PB * Alma;
+                        if (from == "PB" && to == "Bit")
+                        {
+                            datoAlma = Alma * 8e+15;
 
+                        }
+                        if (from == "PB" && to == "Byte")
+                        {
+                            datoAlma = Alma * 1e+15;
+
+                        }
+                        if (from == "PB" && to == "KB")
+                        {
+                            datoAlma = Alma * 1e+12;
+
+                        }
+                        if (from == "PB" && to == "MB")
+                        {
+                            datoAlma = Alma * 1e+9;
+
+                        }
+                        if (from == "PB" && to == "GB")
+                        {
+                            datoAlma = Alma * 1e+6;
+
+                        }
+                        if (from == "PB" && to == "TB")
+                        {
+                            datoAlma = Alma * 1000;
+
+                        }
                         break;
-                    case 7://EB
-                        datoAlma = Alma / EB*Alma;
-                        break;
-                   
+
+
+
                 }
-                lblAlmacenaje.Text = "Total: " + respuesta + "\n";
+                lblAlmacenaje.Text = "Total: " + datoAlma + "\n";
 
             }
 
