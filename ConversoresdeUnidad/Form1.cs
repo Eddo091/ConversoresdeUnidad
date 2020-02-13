@@ -1522,7 +1522,7 @@ namespace ConversoresdeUnidad
             }
            
         }
-
+        //Almacenaje
         private void BtnAlmacenaje_Click(object sender, EventArgs e)
         {
            
