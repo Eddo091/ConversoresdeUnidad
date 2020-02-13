@@ -111,80 +111,115 @@ namespace ConversoresdeUnidad
                     case 0://METRO
                         if (from == "Metro" && to == "Cm")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) * 100);
+                            dato = Cantidad * 100;
 
                         }
-                        if (from == "METRO" && to == "Pulg")
+                    
+                        if (from == "Metro" && to == "Pulg")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) * 39.37);
+                            dato = Cantidad  * 39.37;
 
                         }
-                        if (from == "METRO" && to == "Yardas")
+                        if (from == "Metro" && to == "Yardas")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) * 1.094);
+                            dato = Cantidad * 1.094;
 
                         }
-                        if (from == "METRO" && to == "varas")
+                        if (from == "Metro" && to == "Varas")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) * 1.430828);
+                            dato = Cantidad * 1.430828;
 
                         }
                         
-                        if (from == "METRO" && to == "ft")
+                        if (from == "Metro" && to == "Pies")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) * 3.281);
+                            dato = Cantidad * 3.281;
 
                         }
-                        if (from == "METRO" && to == "kms")
+                        if (from == "Metro" && to == "KMS")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 1000);
+                            dato = Cantidad / 1000;
 
                         }
-                        if (from == "METRO" && to == "millas")
+                        if (from == "Metro" && to == "Millas")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 1609);
+                            dato = Cantidad / 1609;
 
                         }
                         break;
                     case 1://CM
-                        if (from == "CM" && to == "METRO")
+                        if (from == "cm" && to == "Metro")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 100);
+                            dato = Cantidad / 100;
 
                         }
-                        if (from == "CM" && to == "Pulg")
+                        if (from == "cm" && to == "Pulg")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 2.54);
+                            dato = Cantidad / 2.54;
 
                         }
-                        if (from == "CM" && to == "Yardas")
+                        if (from == "cm" && to == "Yardas")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 91.44);
+                            dato = Cantidad / 91.44;
 
                         }
-                        if (from == "CM" && to == "varas")
+                        if (from == "cm" && to == "Varas")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 1.430828);
+                            dato = Cantidad / 1.430828;
 
                         }
-                        if (from == "CM" && to == "ft")
+                        if (from == "cm" && to == "Pies")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 30.48);
+                            dato = Cantidad / 30.48;
 
                         }
-                        if (from == "CM" && to == "kms")
+                        if (from == "cm" && to == "KMS")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 100000);
+                            dato = Cantidad / 100000;
 
                         }
-                        if (from == "CM" && to == "millas")
+                        if (from == "cm" && to == "Millas")
                         {
-                            lblRespLong.Text = Convert.ToString(Convert.ToInt32(txtlong.Text) / 160934);
+                            dato = Cantidad / 160934;
 
                         }
                         break;
                     case 2://PULGADA
-                        dato = Cantidad / Pulg * Cantidad;
+                        if (from == "Pulg" && to == "Metro")
+                        {
+                            dato = Cantidad / 39.37;
+
+                        }
+                        if (from == "Pulg" && to == "cm")
+                        {
+                            dato = Cantidad * 2.54;
+
+                        }
+                        if (from == "Pulg" && to == "Yardas")
+                        {
+                            dato = Cantidad / 36;
+
+                        }
+                        if (from == "Pulg" && to == "Varas")
+                        {
+                            dato = Cantidad / 1.430828;
+
+                        }
+                        if (from == "Pulg" && to == "Pies")
+                        {
+                            dato = Cantidad / 12;
+
+                        }
+                        if (from == "Pulg" && to == "KMS")
+                        {
+                            dato = Cantidad / 39370;
+
+                        }
+                        if (from == "Pulg" && to == "Millas")
+                        {
+                            dato = Cantidad / 39370;
+
+                        }
                         break;
                     case 3://YARDA
                         dato = Cantidad / Yardas * Cantidad;
@@ -208,10 +243,43 @@ namespace ConversoresdeUnidad
                 {
 
                     case 0://METRO
-                        if (cboDeLong.SelectedIndex == 1)
-                            respuesta = dato / METRO * dato;
-                        else
-                            respuesta = dato * METRO / dato;
+                        if (from == "Metro" && to == "Cm")
+                        {
+                            dato = Cantidad * 100;
+
+                        }
+                     
+                        if (from == "METRO" && to == "Pulg")
+                        {
+                            dato = Cantidad * 39.37;
+
+                        }
+                        if (from == "METRO" && to == "Yardas")
+                        {
+                            dato = Cantidad * 1.094;
+
+                        }
+                        if (from == "METRO" && to == "varas")
+                        {
+                            dato = Cantidad * 1.430828;
+
+                        }
+
+                        if (from == "METRO" && to == "ft")
+                        {
+                            dato = Cantidad * 3.281;
+
+                        }
+                        if (from == "METRO" && to == "kms")
+                        {
+                            dato = Cantidad / 1000;
+
+                        }
+                        if (from == "METRO" && to == "millas")
+                        {
+                            dato = Cantidad / 1609;
+
+                        }
                         break;
                     case 1://CM
                         if (cboDeLong.SelectedIndex == 0)
@@ -241,7 +309,7 @@ namespace ConversoresdeUnidad
 
                 }
 
-                lblRespLong.Text = "Total: " + respuesta;
+                lblRespLong.Text = "Total: " + dato;
             }
             catch (Exception error)
             {
