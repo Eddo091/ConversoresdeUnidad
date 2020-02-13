@@ -99,8 +99,7 @@ namespace ConversoresdeUnidad
                 to = cboALong.SelectedItem.ToString();
 
                
-                double Cantidad = double.Parse(txtlong.Text), METRO = 1, CM = 100, Pulg = 0.393701, Yardas = 0.0109361,
-                    varas = 1.430828, ft = 0.0328084, kms = 1000, millas = 1609.344, respuesta = 0,
+                double Cantidad = double.Parse(txtlong.Text),
                 dato = 0;
 
                 
@@ -148,37 +147,37 @@ namespace ConversoresdeUnidad
                         }
                         break;
                     case 1://CM
-                        if (from == "cm" && to == "Metro")
+                        if (from == "Cm" && to == "Metro")
                         {
                             dato = Cantidad / 100;
 
                         }
-                        if (from == "cm" && to == "Pulg")
+                        if (from == "Cm" && to == "Pulg")
                         {
                             dato = Cantidad / 2.54;
 
                         }
-                        if (from == "cm" && to == "Yardas")
+                        if (from == "Cm" && to == "Yardas")
                         {
                             dato = Cantidad / 91.44;
 
                         }
-                        if (from == "cm" && to == "Varas")
+                        if (from == "Cm" && to == "Varas")
                         {
                             dato = Cantidad / 1.430828;
 
                         }
-                        if (from == "cm" && to == "Pies")
+                        if (from == "Cm" && to == "Pies")
                         {
                             dato = Cantidad / 30.48;
 
                         }
-                        if (from == "cm" && to == "KMS")
+                        if (from == "Cm" && to == "KMS")
                         {
                             dato = Cantidad / 100000;
 
                         }
-                        if (from == "cm" && to == "Millas")
+                        if (from == "Cm" && to == "Millas")
                         {
                             dato = Cantidad / 160934;
 
@@ -222,19 +221,190 @@ namespace ConversoresdeUnidad
                         }
                         break;
                     case 3://YARDA
-                        dato = Cantidad / Yardas * Cantidad;
+                        if (from == "Yardas" && to == "Metro")
+                        {
+                            dato = Cantidad / 1.094;
+
+                        }
+                        if (from == "Yardas" && to == "Cm")
+                        {
+                            dato = Cantidad * 91.44;
+
+                        }
+                        if (from == "Yardas" && to == "Pulg")
+                        {
+                            dato = Cantidad * 36;
+
+                        }
+                        if (from == "Yardas" && to == "Vara")
+                        {
+                            dato = Cantidad * 1.430828;
+
+                        }
+                        if (from == "Yardas" && to == "Pies")
+                        {
+                            dato = Cantidad * 3;
+
+                        }
+                        if (from == "Yardas" && to == "KMS")
+                        {
+                            dato = Cantidad / 1094;
+
+                        }
+                        if (from == "Yardas" && to == "Millas")
+                        {
+                            dato = Cantidad / 1760;
+
+                        }
                         break;
                     case 4://VARA
-                        dato = Cantidad / varas * Cantidad;
+                        if (from == "Vara" && to == "Metro")
+                        {
+                            dato = Cantidad / 1.193;
+
+                        }
+                        if (from == "Vara" && to == "Cm")
+                        {
+                            dato = Cantidad / 83.5905;
+
+                        }
+                        if (from == "Vara" && to == "Pulg")
+                        {
+                            dato = Cantidad / 32.9096;
+
+                        }
+                        if (from == "Vara" && to == "Yardas")
+                        {
+                            dato = Cantidad / 0.91415682414698;
+
+                        }
+                        if (from == "Vara" && to == "Pies")
+                        {
+                            dato = Cantidad / 2.7424704724409;
+
+                        }
+                        if (from == "Vara" && to == "KMS")
+                        {
+                            dato = Cantidad / 0.000835905;
+
+                        }
+                        if (from == "Vara" && to == "Millas")
+                        {
+                            dato = Cantidad / 0.00051940728644715;
+
+                        }
                         break;
                     case 5://PIES
-                        dato = Cantidad / ft * Cantidad;
+                        if (from == "Pies" && to == "Metros")
+                        {
+                            dato = Cantidad / 3.281;
+
+                        }
+                        if (from == "Pies" && to == "Cm")
+                        {
+                            dato = Cantidad * 30.48;
+                            
+                        }
+
+                        if (from == "Pies" && to == "Pulg")
+                        {
+                            dato = Cantidad * 12;
+
+                        }
+                        if (from == "Pies" && to == "Yardas")
+                        {
+                            dato = Cantidad / 3;
+
+                        }
+                        if (from == "Pies" && to == "Varas")
+                        {
+                            dato = Cantidad / 0.364634737201;
+
+                        }
+                        if (from == "Pies" && to == "KMS")
+                        {
+                            dato = Cantidad / 3281;
+
+                        }
+                        if (from == "Pies" && to == "Millas")
+                        {
+                            dato = Cantidad / 5280;
+
+                        }
                         break;
                     case 6://KMS
-                        dato = Cantidad / kms * Cantidad;
+                        if (from == "KMS" && to == "Metros")
+                        {
+                            dato = Cantidad * 1000;
+
+                        }
+                        if (from == "KMS" && to == "Cm")
+                        {
+                            dato = Cantidad * 100000;
+
+                        }
+                        if (from == "KMS" && to == "Pulg")
+                        {
+                            dato = Cantidad * 100000;
+
+                        }
+                        if (from == "KMS" && to == "Yardas")
+                        {
+                            dato = Cantidad * 1094;
+
+                        }
+                        if (from == "KMS" && to == "Pies")
+                        {
+                            dato = Cantidad * 3281;
+
+                        }
+                        if (from == "KMS" && to == "Varas")
+                        {
+                            dato = Cantidad / 0.000835905;
+
+                        }
+                        if (from == "KMS" && to == "Millas")
+                        {
+                            dato = Cantidad / 1.609;
+
+                        }
                         break;
                     case 7://MILLAS
-                        dato = Cantidad / millas * Cantidad;
+                        if (from == "Millas" && to == "Metros")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
+                        if (from == "Millas" && to == "Cm")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
+                        if (from == "Millas" && to == "Pulg")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
+                        if (from == "Millas" && to == "Yardas")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
+                        if (from == "Millas" && to == "Varas")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
+                        if (from == "Millas" && to == "Pies")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
+                        if (from == "Millas" && to == "KMS")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
                         break;
                 }
 
@@ -248,65 +418,299 @@ namespace ConversoresdeUnidad
                             dato = Cantidad * 100;
 
                         }
-                     
-                        if (from == "METRO" && to == "Pulg")
+
+                        if (from == "Metro" && to == "Pulg")
                         {
                             dato = Cantidad * 39.37;
 
                         }
-                        if (from == "METRO" && to == "Yardas")
+                        if (from == "Metro" && to == "Yardas")
                         {
                             dato = Cantidad * 1.094;
 
                         }
-                        if (from == "METRO" && to == "varas")
+                        if (from == "Metro" && to == "Varas")
                         {
                             dato = Cantidad * 1.430828;
 
                         }
 
-                        if (from == "METRO" && to == "ft")
+                        if (from == "Metro" && to == "Pies")
                         {
                             dato = Cantidad * 3.281;
 
                         }
-                        if (from == "METRO" && to == "kms")
+                        if (from == "Metro" && to == "KMS")
                         {
                             dato = Cantidad / 1000;
 
                         }
-                        if (from == "METRO" && to == "millas")
+                        if (from == "Metro" && to == "Millas")
                         {
                             dato = Cantidad / 1609;
 
                         }
                         break;
                     case 1://CM
-                        if (cboDeLong.SelectedIndex == 0)
-                            respuesta = dato * CM / dato;
-                        else
-                            respuesta = dato / CM * dato;
-                        break;
-                    case 2://PULG
+                        if (from == "Cm" && to == "Metro")
+                        {
+                            dato = Cantidad / 100;
 
-                        respuesta = dato / Pulg * dato;
+                        }
+                        if (from == "Cm" && to == "Pulg")
+                        {
+                            dato = Cantidad / 2.54;
+
+                        }
+                        if (from == "Cm" && to == "Yardas")
+                        {
+                            dato = Cantidad / 91.44;
+
+                        }
+                        if (from == "Cm" && to == "Varas")
+                        {
+                            dato = Cantidad / 1.430828;
+
+                        }
+                        if (from == "Cm" && to == "Pies")
+                        {
+                            dato = Cantidad / 30.48;
+
+                        }
+                        if (from == "Cm" && to == "KMS")
+                        {
+                            dato = Cantidad / 100000;
+
+                        }
+                        if (from == "Cm" && to == "Millas")
+                        {
+                            dato = Cantidad / 160934;
+
+                        }
+                        break;
+                    case 2://PULGADA
+                        if (from == "Pulg" && to == "Metro")
+                        {
+                            dato = Cantidad / 39.37;
+
+                        }
+                        if (from == "Pulg" && to == "cm")
+                        {
+                            dato = Cantidad * 2.54;
+
+                        }
+                        if (from == "Pulg" && to == "Yardas")
+                        {
+                            dato = Cantidad / 36;
+
+                        }
+                        if (from == "Pulg" && to == "Varas")
+                        {
+                            dato = Cantidad / 1.430828;
+
+                        }
+                        if (from == "Pulg" && to == "Pies")
+                        {
+                            dato = Cantidad / 12;
+
+                        }
+                        if (from == "Pulg" && to == "KMS")
+                        {
+                            dato = Cantidad / 39370;
+
+                        }
+                        if (from == "Pulg" && to == "Millas")
+                        {
+                            dato = Cantidad / 39370;
+
+                        }
                         break;
                     case 3://YARDA
-                        respuesta = dato / Yardas * dato;
+                        if (from == "Yardas" && to == "Metro")
+                        {
+                            dato = Cantidad / 1.094;
+
+                        }
+                        if (from == "Yardas" && to == "Cm")
+                        {
+                            dato = Cantidad * 91.44;
+
+                        }
+                        if (from == "Yardas" && to == "Pulg")
+                        {
+                            dato = Cantidad * 36;
+
+                        }
+                        if (from == "Yardas" && to == "Vara")
+                        {
+                            dato = Cantidad * 1.430828;
+
+                        }
+                        if (from == "Yardas" && to == "Pies")
+                        {
+                            dato = Cantidad * 3;
+
+                        }
+                        if (from == "Yardas" && to == "KMS")
+                        {
+                            dato = Cantidad / 1094;
+
+                        }
+                        if (from == "Yardas" && to == "Millas")
+                        {
+                            dato = Cantidad / 1760;
+
+                        }
                         break;
                     case 4://VARA
-                        respuesta = dato / varas * dato;
+                        if (from == "Vara" && to == "Metro")
+                        {
+                            dato = Cantidad / 1.193;
+
+                        }
+                        if (from == "Vara" && to == "Cm")
+                        {
+                            dato = Cantidad / 83.5905;
+
+                        }
+                        if (from == "Vara" && to == "Pulg")
+                        {
+                            dato = Cantidad / 32.9096;
+
+                        }
+                        if (from == "Vara" && to == "Yardas")
+                        {
+                            dato = Cantidad / 0.91415682414698;
+
+                        }
+                        if (from == "Vara" && to == "Pies")
+                        {
+                            dato = Cantidad / 2.7424704724409;
+
+                        }
+                        if (from == "Vara" && to == "KMS")
+                        {
+                            dato = Cantidad / 0.000835905;
+
+                        }
+                        if (from == "Vara" && to == "Millas")
+                        {
+                            dato = Cantidad / 0.00051940728644715;
+
+                        }
                         break;
-                    case 5://PIE
-                        respuesta = dato / ft * dato;
+                    case 5://PIES
+                        if (from == "Pies" && to == "Metros")
+                        {
+                            dato = Cantidad / 3.281;
+
+                        }
+                        if (from == "Pies" && to == "Cm")
+                        {
+                            dato = Cantidad * 30.48;
+
+                        }
+
+                        if (from == "Pies" && to == "Pulg")
+                        {
+                            dato = Cantidad * 12;
+
+                        }
+                        if (from == "Pies" && to == "Yardas")
+                        {
+                            dato = Cantidad / 3;
+
+                        }
+                        if (from == "Pies" && to == "Varas")
+                        {
+                            dato = Cantidad / 0.364634737201;
+
+                        }
+                        if (from == "Pies" && to == "KMS")
+                        {
+                            dato = Cantidad / 3281;
+
+                        }
+                        if (from == "Pies" && to == "Millas")
+                        {
+                            dato = Cantidad / 5280;
+
+                        }
                         break;
                     case 6://KMS
-                        respuesta = dato / kms * dato;
-                        break;
-                    case 7://MILLA
-                        respuesta = dato / millas * dato;
-                        break;
+                        if (from == "KMS" && to == "Metros")
+                        {
+                            dato = Cantidad * 1000;
 
+                        }
+                        if (from == "KMS" && to == "Cm")
+                        {
+                            dato = Cantidad * 100000;
+
+                        }
+                        if (from == "KMS" && to == "Pulg")
+                        {
+                            dato = Cantidad * 100000;
+
+                        }
+                        if (from == "KMS" && to == "Yardas")
+                        {
+                            dato = Cantidad * 1094;
+
+                        }
+                        if (from == "KMS" && to == "Pies")
+                        {
+                            dato = Cantidad * 3281;
+
+                        }
+                        if (from == "KMS" && to == "Varas")
+                        {
+                            dato = Cantidad / 0.000835905;
+
+                        }
+                        if (from == "KMS" && to == "Millas")
+                        {
+                            dato = Cantidad / 1.609;
+
+                        }
+                        break;
+                    case 7://MILLAS
+                        if (from == "Millas" && to == "Metros")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
+                        if (from == "Millas" && to == "Cm")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
+                        if (from == "Millas" && to == "Pulg")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
+                        if (from == "Millas" && to == "Yardas")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
+                        if (from == "Millas" && to == "Varas")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
+                        if (from == "Millas" && to == "Pies")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
+                        if (from == "Millas" && to == "KMS")
+                        {
+                            dato = Cantidad * 1609;
+
+                        }
+                        break;
                 }
 
                 lblRespLong.Text = "Total: " + dato;
@@ -390,7 +794,7 @@ namespace ConversoresdeUnidad
         //temperatura
         private void btnTemp_Click(object sender, EventArgs e)
         {
-            /*
+          
             try
             {
                 double temp = double.Parse(txtTemp.Text), C = 32, F = 9 / 5, k = 273.15, datotemp = 0, respuesta = 0;
@@ -448,7 +852,7 @@ namespace ConversoresdeUnidad
                 MessageBox.Show("Por favor ingrese solo numero: " + error.Message, "Conversor temperatura",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            */
+           
         }
 
         private void BtnAlmacenaje_Click(object sender, EventArgs e)
