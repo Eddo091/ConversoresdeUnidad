@@ -15,12 +15,24 @@ namespace ConversoresdeUnidad
         public Form1()
         {
             InitializeComponent();
+           
         }
-
+        //Moneda
         private void BtnMon_Click(object sender, EventArgs e)
         {
+            //limpiar txtbox
+            txtAlma.Text = "";
+            txtlong.Text = "";
+            txtpeso.Text = "";
+            txtTemp.Text = "";
+            //limpiar lbl
+            lblAlmacenaje.Text = "";
+            lblRespLong.Text = "";
+            lblRespPeso.Text = "";
+            lblRespTemp.Text = "";
             try
             {
+
                 string from, to;
 
                 from = cboDeMon.SelectedItem.ToString();
@@ -414,6 +426,16 @@ namespace ConversoresdeUnidad
         //longitud
         private void BtnLong_Click(object sender, EventArgs e)
         {
+            //limpiar txtbox
+            txtAlma.Text = "";
+            txtmon.Text = "";
+            txtpeso.Text = "";
+            txtTemp.Text = "";
+            //limpiar lbl
+            lblAlmacenaje.Text = "";
+            lblRespMo.Text = "";
+            lblRespPeso.Text = "";
+            lblRespTemp.Text = "";
             try
             {
 
@@ -1048,6 +1070,16 @@ namespace ConversoresdeUnidad
         //masa
         private void btnPeso_Click(object sender, EventArgs e)
         {
+            //limpiar txtbox
+            txtAlma.Text = "";
+            txtmon.Text = "";
+            txtlong.Text = "";
+            txtTemp.Text = "";
+            //limpiar lbl
+            lblAlmacenaje.Text = "";
+            lblRespMo.Text = "";
+            lblRespLong.Text = "";
+            lblRespTemp.Text = "";
             try
 
             {
@@ -1409,10 +1441,19 @@ namespace ConversoresdeUnidad
         //temperatura
         private void btnTemp_Click(object sender, EventArgs e)
         {
-          
+            //limpiar txtbox
+            txtAlma.Text = "";
+            txtlong.Text = "";
+            txtpeso.Text = "";
+            txtmon.Text = "";
+            //limpiar lbl
+            lblAlmacenaje.Text = "";
+            lblRespLong.Text = "";
+            lblRespPeso.Text = "";
+            lblRespMo.Text = "";
             try
             {
-                double temp = double.Parse(txtTemp.Text), C = 32, F = 9 / 5, k = 273.15, datotemp = 0, respuesta = 0;
+                double temp = double.Parse(txtTemp.Text), datotemp = 0;
                 string from, to;
 
                 from = cboDeTemp.SelectedItem.ToString();
@@ -1509,7 +1550,7 @@ namespace ConversoresdeUnidad
 
                         break;
                 }
-                lblRespTemp.Text = "Temp: " + respuesta + "\n";
+                lblRespTemp.Text = "Temp: " + datotemp + "\n";
 
             }
 
@@ -1525,10 +1566,19 @@ namespace ConversoresdeUnidad
         //Almacenaje
         private void BtnAlmacenaje_Click(object sender, EventArgs e)
         {
-           
+            //limpiar txtbox
+            txtmon.Text = "";
+            txtlong.Text = "";
+            txtpeso.Text = "";
+            txtTemp.Text = "";
+            //limpiar lbl
+            lblRespMo.Text = "";
+            lblRespLong.Text = "";
+            lblRespPeso.Text = "";
+            lblRespTemp.Text = "";
             try
             {
-                double Alma = double.Parse(txtAlma.Text),Bit=8, Byte=1, KB = 1024, MB = 1048576, GB = 1073741824,TB= 1099511627776, PB= 1125899906842624,EB= 1152921504606846976 , datoAlma = 0, respuesta = 0;
+                double Alma = double.Parse(txtAlma.Text), datoAlma = 0;
                 string from, to;
 
                 from = cboDeAlma.SelectedItem.ToString();
