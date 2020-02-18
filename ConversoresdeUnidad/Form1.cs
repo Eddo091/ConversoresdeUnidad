@@ -13,9 +13,11 @@ namespace ConversoresdeUnidad
     public partial class Form1 : Form
     {
         public Form1()
+            
         {
+            
             InitializeComponent();
-           
+            
         }
         //Moneda
         private void BtnMon_Click(object sender, EventArgs e)
@@ -25,15 +27,17 @@ namespace ConversoresdeUnidad
             txtlong.Text = "";
             txtpeso.Text = "";
             txtTemp.Text = "";
+            
             //limpiar lbl
             lblAlmacenaje.Text = "";
             lblRespLong.Text = "";
             lblRespPeso.Text = "";
             lblRespTemp.Text = "";
+            double r;
             try
             {
 
-                string from, to;
+                    string from, to;
 
                 from = cboDeMon.SelectedItem.ToString();
                 to = cboAMon.SelectedItem.ToString();
@@ -45,7 +49,9 @@ namespace ConversoresdeUnidad
                     case 0://DOLAR
                         if (from == "Dolar" && to == "Euro")
                         {
+                            
                             moneda = Cantidad / 1.09;
+
                         }
                         if (from == "Dolar" && to == "Quetzal")
                         {
@@ -66,7 +72,10 @@ namespace ConversoresdeUnidad
                         if (from == "Dolar" && to == "Colon SV")
                         {
                             moneda = Cantidad / 0.11;
-                        }
+                           
+                        } 
+                        
+
                         break;
                     case 1://EURO
                         if (from == "Euro" && to == "Dolar")
@@ -415,7 +424,8 @@ namespace ConversoresdeUnidad
 
 
                 }
-                lblRespMo.Text = "Total: " + moneda;
+                r = Math.Round(moneda, 2);
+                lblRespMo.Text = "Total: " + r;
             }
             catch (Exception error)
             {
@@ -426,6 +436,7 @@ namespace ConversoresdeUnidad
         //longitud
         private void BtnLong_Click(object sender, EventArgs e)
         {
+            double r;
             //limpiar txtbox
             txtAlma.Text = "";
             txtmon.Text = "";
@@ -1058,8 +1069,8 @@ namespace ConversoresdeUnidad
                         }
                         break;
                 }
-
-                lblRespLong.Text = "Total: " + dato;
+                r = Math.Round(dato, 2);
+                lblRespLong.Text = "Total: " + r;
             }
             catch (Exception error)
             {
@@ -1070,6 +1081,7 @@ namespace ConversoresdeUnidad
         //masa
         private void btnPeso_Click(object sender, EventArgs e)
         {
+            double r;
             //limpiar txtbox
             txtAlma.Text = "";
             txtmon.Text = "";
@@ -1424,15 +1436,18 @@ namespace ConversoresdeUnidad
                         }
                         break;
                 }
+                r = Math.Round(dato, 2);
+          
+                lblRespPeso.Text = "Total: " + r ;
 
-                lblRespPeso.Text = "Total: " + dato;
-
-
+                
             }
             catch (Exception error)
             {
+                
                 MessageBox.Show("Por favor ingrese solo numero: " + error.Message, "Conversor masa(peso)",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
                     
             } 
 
@@ -1441,6 +1456,7 @@ namespace ConversoresdeUnidad
         //temperatura
         private void btnTemp_Click(object sender, EventArgs e)
         {
+           
             //limpiar txtbox
             txtAlma.Text = "";
             txtlong.Text = "";
@@ -1566,6 +1582,7 @@ namespace ConversoresdeUnidad
         //Almacenaje
         private void BtnAlmacenaje_Click(object sender, EventArgs e)
         {
+            double r;
             //limpiar txtbox
             txtmon.Text = "";
             txtlong.Text = "";
@@ -2054,6 +2071,7 @@ namespace ConversoresdeUnidad
 
 
                 }
+                r = Math.Round(datoAlma, 2);
                 lblAlmacenaje.Text = "Total: " + datoAlma + "\n";
 
             }
