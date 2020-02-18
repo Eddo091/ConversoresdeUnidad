@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.cboATemp = new System.Windows.Forms.ComboBox();
             this.cboDeTemp = new System.Windows.Forms.ComboBox();
             this.cboAPes = new System.Windows.Forms.ComboBox();
@@ -421,6 +422,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(775, 269);
             this.Controls.Add(this.cboAAlma);
             this.Controls.Add(this.cboDeAlma);
@@ -454,6 +456,8 @@
             this.Controls.Add(this.btnPeso);
             this.Controls.Add(this.BtnLong);
             this.Controls.Add(this.BtnMon);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
